@@ -24,4 +24,3 @@ class XRangeConfigSpec extends org.specs2.mutable.Specification {
     }
   }
 }
-

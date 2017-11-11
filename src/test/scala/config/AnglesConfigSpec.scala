@@ -10,6 +10,10 @@ class AnglesConfigSpec extends org.specs2.mutable.Specification {
 
     1 must_== 1
   }
+  "#executeString" >> {
+    new AnglesConfig(new DegreesAngle).executeString must_==
+      "set angles degrees"
+  }
 }
 
 class DegreesAngleSpec extends org.specs2.mutable.Specification {

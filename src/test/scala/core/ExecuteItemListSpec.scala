@@ -2,7 +2,7 @@ package gnu.test.core
 import gnu.core.ExecuteItemList
 import gnu.core.ExecuteItem
 import gnu.core.Plotter
-import gnu.configuration.XRangeConfiguration
+import gnu.config.XRangeConfig
 
 import org.specs2._
 
@@ -17,7 +17,7 @@ class ExecuteItemListSpec extends org.specs2.mutable.Specification {
   "#AllConfigure" >> {
     val l = new ExecuteItemList(List(
       new Plotter("x * x"),
-      new XRangeConfiguration(Some(-1), Some(1))
+      new XRangeConfig(Some(-1), Some(1))
     ))
 
     l.toString must_==

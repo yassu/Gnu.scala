@@ -13,6 +13,10 @@ class ExecuteItemList(val execList: List[ExecuteItem]) {
     }
   }
 
+  def writeInto(filename: String) {
+    this.writeInto(new File(filename))
+  }
+
   def writeInto(f: File) {
     printToFile(f) {p => p.println(this.toString)}
   }

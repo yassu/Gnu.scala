@@ -10,6 +10,5 @@ object Main extends App {
     new XRangeConfiguration(Some(-1), Some(1))
   ))
 
-  println(l.toString)
-  l.writeInto(new File("test.gnu"))
+  l.writeInto("test.gnu")
 }

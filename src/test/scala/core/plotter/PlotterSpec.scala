@@ -1,5 +1,5 @@
-package gnu.test.core
-import gnu.core.Plotter
+package gnu.test.core.plotter
+import gnu.core.plotter.Plotter
 
 import org.specs2._
 

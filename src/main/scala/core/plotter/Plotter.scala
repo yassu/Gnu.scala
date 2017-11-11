@@ -1,4 +1,4 @@
-package gnu.core
+package gnu.core.plotter
 
 import gnu.core.ExecuteItem
 

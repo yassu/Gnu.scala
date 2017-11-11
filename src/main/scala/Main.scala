@@ -1,7 +1,7 @@
 import gnu.config.XRangeConfig
 import gnu.core.ExecuteItem
 import gnu.core.ExecuteItemList
-import gnu.core.Plotter
+import gnu.core.plotter.Plotter
 import java.io.File
 
 object Main extends App {

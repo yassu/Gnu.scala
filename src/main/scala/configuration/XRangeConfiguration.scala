@@ -1,8 +1,11 @@
 package gnu.configuration
 
-class XRangeConfiguration(private val start: Option[Double], private val end: Option[Double]) {
+import gnu.core.ExecuteItem
 
-  def getOptionString:String = "set xrange [%s:%s]".format(
+class XRangeConfiguration(private val start: Option[Double], private val end: Option[Double]
+  ) extends Configuration {
+
+  def executeString:String = "set xrange [%s:%s]".format(
     this.start match {
       case Some(f) => f.toString
       case None => ""

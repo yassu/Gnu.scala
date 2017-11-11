@@ -1,6 +1,6 @@
 package gnu.configuration
+import gnu.core.ExecuteItem
 
-abstract class Configuration {
-  def getOptionString:String
+abstract class Configuration extends ExecuteItem {
 }
 

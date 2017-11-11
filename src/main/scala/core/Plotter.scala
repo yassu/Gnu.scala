@@ -1,5 +1,7 @@
 package gnu.core
 
-class Plotter(private val formula: String) {
-  def getPlotString = s"plot ${formula}"
+import gnu.core.ExecuteItem
+
+class Plotter(private val formula: String) extends ExecuteItem {
+  def executeString:String = s"plot ${formula}"
 }

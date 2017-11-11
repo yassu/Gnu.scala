@@ -9,8 +9,8 @@ class PlotterSpec extends org.specs2.mutable.Specification {
 
     1 must_== 1
   }
-  "#getPlotString" >> {
-    new Plotter("x*x").getPlotString must_== "plot x*x"
+  "#executeString" >> {
+    new Plotter("x*x").executeString must_== "plot x*x"
   }
 }
 

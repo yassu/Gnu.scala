@@ -1,5 +1,6 @@
-package gnu.configuration
+package gnu.test.configuration
 
+import gnu.configuration.XRangeConfiguration
 import org.specs2._
 
 class XRangeConfigurationSpec extends org.specs2.mutable.Specification {

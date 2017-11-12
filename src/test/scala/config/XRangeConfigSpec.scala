@@ -22,5 +22,13 @@ class XRangeConfigSpec extends org.specs2.mutable.Specification {
     "Neither is set" >> {
       new XRangeConfig(None, None).executeString must_== "set xrange [:]"
     }
+    "noreverse" >> {
+      new XRangeConfig(Some(-1), Some(1), isReverse=Some(false)).executeString must_==
+        "set xrange [-1.0:1.0] noreverse"
+    }
+    "reverse" >> {
+      new XRangeConfig(Some(-1), Some(1), isReverse=Some(true)).executeString must_==
+        "set xrange [-1.0:1.0] reverse"
+    }
   }
 }

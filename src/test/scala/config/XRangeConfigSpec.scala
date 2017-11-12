@@ -38,5 +38,9 @@ class XRangeConfigSpec extends org.specs2.mutable.Specification {
       new XRangeConfig(Some(-1), Some(1), isWriteBack=Some(false)).executeString must_==
         "set xrange [-1.0:1.0] nowriteback"
     }
+    "restore" >> {
+      new XRangeConfig(None, None, restore=Some(())).executeString must_==
+        "set xrange restore"
+    }
   }
 }

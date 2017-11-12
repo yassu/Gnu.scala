@@ -25,17 +25,19 @@ class PlotterSpec extends org.specs2.mutable.Specification {
   }
   "#executeString" >> {
     "Neither is set" >> {
-      new Plotter(List("x*x")).executeString must_== "plot x*x"
+      new Plotter(List("x*x", "x*x*x")).executeString must_== "plot x*x, x*x*x"
     }
     "Just Left is set" >> {
-      new Plotter(List("x*x"), xMin=Some(-1.0)).executeString must_== "plot [-1.0:] x*x"
+      new Plotter(List("x*x", "x*x*x"), xMin=Some(-1.0)).executeString must_==
+        "plot [-1.0:] x*x, x*x*x"
     }
     "Just Right is set" >> {
-      new Plotter(List("x*x"), xMax=Some(1.0)).executeString must_== "plot [:1.0] x*x"
+      new Plotter(List("x*x", "x*x*x"), xMax=Some(1.0)).executeString must_==
+        "plot [:1.0] x*x, x*x*x"
     }
     "Both are set" >> {
-      new Plotter(List("x*x"), xMin=Some(-1.0), xMax=Some(1.0)).executeString must_==
-        "plot [-1.0:1.0] x*x"
+      new Plotter(List("x*x", "x*x*x"), xMin=Some(-1.0), xMax=Some(1.0)).executeString must_==
+        "plot [-1.0:1.0] x*x, x*x*x"
     }
   }
 }

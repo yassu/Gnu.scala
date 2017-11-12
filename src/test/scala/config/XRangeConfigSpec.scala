@@ -5,9 +5,24 @@ import org.specs2._
 
 class XRangeConfigSpec extends org.specs2.mutable.Specification {
   "#Init" >> {
-    new XRangeConfig(Some(-1), Some(1))
+    "#set start and end" >> {
+      new XRangeConfig(Some(-1), Some(1))
 
-    1 must_== 1
+      1 must_== 1
+    }
+    "restore validation" >> {
+      try {
+        new XRangeConfig(Some(-1), None, restore=Some(()))
+        1 must_== 2
+      } catch {
+        case _: IllegalArgumentException => 1 must_== 1
+      }
+    }
+    "restore" >> {
+      new XRangeConfig(None, None, restore=Some(()))
+
+      1 must_== 1
+    }
   }
   "#executeString" >> {
     "case: Both are set" >> {

@@ -9,6 +9,16 @@ class XRangeConfig(private val start: Option[Double], private val end: Option[Do
     private val restore: Option[Unit]=None
   ) extends Config {
 
+  if (
+    !restore.isEmpty && (
+      ! start.isEmpty ||
+      ! end.isEmpty ||
+      ! isReverse.isEmpty ||
+      ! isWriteBack.isEmpty
+  )) {
+    throw new IllegalArgumentException("XRangeConfig has illegal error.")
+  }
+
   def executeString:String = if (restore.isEmpty) {
         "set xrange [%s:%s]".format(
       this.start match {

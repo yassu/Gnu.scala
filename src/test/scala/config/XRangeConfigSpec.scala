@@ -30,5 +30,13 @@ class XRangeConfigSpec extends org.specs2.mutable.Specification {
       new XRangeConfig(Some(-1), Some(1), isReverse=Some(true)).executeString must_==
         "set xrange [-1.0:1.0] reverse"
     }
+    "writeback" >> {
+      new XRangeConfig(Some(-1), Some(1), isWriteBack=Some(true)).executeString must_==
+        "set xrange [-1.0:1.0] writeback"
+    }
+    "nowriteback" >> {
+      new XRangeConfig(Some(-1), Some(1), isWriteBack=Some(false)).executeString must_==
+        "set xrange [-1.0:1.0] nowriteback"
+    }
   }
 }

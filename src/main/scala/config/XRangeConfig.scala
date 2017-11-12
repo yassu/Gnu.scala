@@ -4,7 +4,8 @@ import gnu.core.ExecuteItem
 import gnu.config.Config
 
 class XRangeConfig(private val start: Option[Double], private val end: Option[Double],
-  private val isReverse: Option[Boolean]=None
+    private val isReverse: Option[Boolean]=None,
+    private val isWriteBack: Option[Boolean]=None
   ) extends Config {
 
   def executeString:String = "set xrange [%s:%s]".format(
@@ -20,6 +21,11 @@ class XRangeConfig(private val start: Option[Double], private val end: Option[Do
   (isReverse match {
     case Some(true) => " reverse"
     case Some(false) => " noreverse"
+    case None => ""
+  }) +
+  (isWriteBack match {
+    case Some(true) => " writeback"
+    case Some(false) => " nowriteback"
     case None => ""
   })
 }

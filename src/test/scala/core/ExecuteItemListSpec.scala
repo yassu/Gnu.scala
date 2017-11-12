@@ -16,7 +16,7 @@ class ExecuteItemListSpec extends org.specs2.mutable.Specification {
   }
   "#AllConfigure" >> {
     val l = new ExecuteItemList(List(
-      new Plotter("x * x"),
+      new Plotter(List("x * x")),
       new XRangeConfig(Some(-1), Some(1))
     ))
 

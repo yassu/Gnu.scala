@@ -6,7 +6,7 @@ import java.io.File
 
 object Main extends App {
   val l = new ExecuteItemList(List(
-    new Plotter("x * x"),
+    new Plotter(List("x * x")),
     new XRangeConfig(Some(-1), Some(1))
   ))
 

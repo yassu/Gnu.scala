@@ -2,7 +2,7 @@ package gnu.core.plotter
 
 import gnu.core.ExecuteItem
 
-class Plotter(private val formula: String,
+class Plotter(private val formulas: List[String],
     private val xMin:Option[Double]=None, private val xMax:Option[Double]=None
     ) extends ExecuteItem {
 
@@ -20,9 +20,9 @@ class Plotter(private val formula: String,
     var rangeString = this.rangeString
 
     if (rangeString.isEmpty) {
-      s"plot ${formula}"
+      s"plot ${formulas.mkString(", ")}"
     } else {
-      s"plot ${rangeString} ${formula}"
+      s"plot ${rangeString} ${formulas.mkString(", ")}"
     }
   }
 }
